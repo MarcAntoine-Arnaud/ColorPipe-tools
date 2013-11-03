@@ -221,7 +221,7 @@ def plot_that_lut(lutfile, plot_type=None, count=None, inverse=False,
         raise PlotThatLutException("Error: {0} file aren't supported.\n{1}"
                                    .format(fileext, supported_formats()))
     # create OCIO processor
-    processor = create_ocio_processor(lutfile, INTERP_LINEAR, inverse,
+	processor = create_ocio_processor(lutfile, 0, inverse,
                                       prelutfile, postlutfile)
     # init args
     if not plot_type or plot_type == 'auto':

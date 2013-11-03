@@ -1,0 +1,52 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8" >
+	<title>Plot That Lut</title>
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+<body>
+	<div id="content">
+		<div id="header">
+			<h1># Plot That LUT #</h1>
+		</div>
+		<div id="text">
+			<form action="upload" method="post" enctype="multipart/form-data">
+				<table>
+				<tr>
+					<th>Choose LUT file:</th>
+					<td colspan=3><input type="file" name="lutfile"/></td>
+				</tr><tr>
+					<th>Lut Type:</th>
+					<td><input type="radio" name="lut_type" id=lutTypeAuto value="auto" checked=true><label for=lutTypeAuto >auto</label></td>
+					<td><input type="radio" name="lut_type" id=lutTypeCurve value="curve"><label for=lutTypeCurve >curve</label></td>
+					<td><input type="radio" name="lut_type" id=lutTypeCube value="cube"><label for=lutTypeCube >cube</label></td>
+				</tr><tr>
+					<th>Samples count:</th>
+					<td><input type="radio" name="count" id=countAuto value="auto" checked=true><label for=countAuto >auto</label></td>
+					<td colspan=2><input type="radio" name="count" id=countCustom value="custom"><label for=countCustom >custom :
+					<input type="number" name="custom_count" min=0 max=100 value=17 size=5></label></td>
+				</tr>
+				</table>
+				<br/>
+				<div id="advanced">
+					# Advanced options #
+					<br/>
+					<input type="checkbox" name=inverse id=inverse value="1"><label for=inverse >Reverse main LUT (for 1D / 2D LUT only)</label><br/>
+					<table wodth=100%>
+					<tr>
+						<th>Choose a pre-lut :</th>
+						<td><input type="file" name="prelutfile"/></td>
+					</tr><tr>
+						<th>Choose a post-lut :</th>
+						<td><input type="file" name="postlutfile"/></td>
+					</tr>
+					</table>
+				</div>
+				<br/>
+				<input type="submit"/>
+			</form>
+		</div>
+	</div>
+</body>
+</html>
